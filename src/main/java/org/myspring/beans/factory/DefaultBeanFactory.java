@@ -1,6 +1,5 @@
 package org.myspring.beans.factory;
 
-import org.myspring.beans.BeanInstantiationException;
 import org.myspring.beans.BeanUtils;
 import org.myspring.beans.definition.BeanDefinition;
 import org.myspring.beans.definition.BeanDefinitionRegistry;

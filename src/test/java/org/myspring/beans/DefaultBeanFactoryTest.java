@@ -12,6 +12,18 @@ public class DefaultBeanFactoryTest {
         DefaultBeanFactory beanFactory = new DefaultBeanFactory();
 
         beanFactory.registerBeanDefinition(new ClassBeanDefinition(TestClass.class));
+        beanFactory.instantiate();
+
+        TestClass testClass = beanFactory.getBean(TestClass.class);
+
+        Assert.assertEquals(testClass.getMessage(), "helloWorld");
+    }
+
+    @Test
+    public void instantiateWithDependencyInjectionTest() {
+        DefaultBeanFactory beanFactory = new DefaultBeanFactory();
+
+        beanFactory.registerBeanDefinition(new ClassBeanDefinition(TestClass.class));
         beanFactory.registerBeanDefinition(new ClassBeanDefinition(TestClass2.class));
         beanFactory.instantiate();
 

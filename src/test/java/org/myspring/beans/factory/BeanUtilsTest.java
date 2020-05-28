@@ -1,7 +1,9 @@
-package org.myspring.beans;
+package org.myspring.beans.factory;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.myspring.beans.BeanInstantiationException;
+import org.myspring.beans.BeanUtils;
 
 import java.util.List;
 
@@ -9,10 +11,8 @@ public class BeanUtilsTest {
 
     @Test
     public void instantiateClassTest() throws Exception {
-
         String message = "Hello World";
         TestClass testClass = BeanUtils.instantiateClass(TestClass.class.getDeclaredConstructor(String.class), message);
-
         Assert.assertEquals(testClass.getMessage(), message);
     }
 
@@ -34,3 +34,5 @@ public class BeanUtilsTest {
         }
     }
 }
+
+
