@@ -1,9 +1,8 @@
-package org.myspring.beans;
+package org.myspring.beans.factory;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.myspring.beans.definition.ClassBeanDefinition;
-import org.myspring.beans.factory.DefaultBeanFactory;
 
 public class DefaultBeanFactoryTest {
 
@@ -35,7 +34,7 @@ public class DefaultBeanFactoryTest {
     }
 
 
-    static class TestClass {
+    public static class TestClass {
         private String message = "helloWorld";
 
         public String getMessage() {
@@ -43,7 +42,7 @@ public class DefaultBeanFactoryTest {
         }
     }
 
-    static class TestClass2 {
+    public static class TestClass2 {
         private final TestClass testClass;
 
         public TestClass2(TestClass testClass) {

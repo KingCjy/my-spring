@@ -1,4 +1,4 @@
-package org.myspring.beans.factory;
+package org.myspring.beans;
 
 import org.junit.Assert;
 import org.junit.Test;
