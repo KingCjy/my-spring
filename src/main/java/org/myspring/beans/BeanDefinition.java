@@ -1,4 +1,4 @@
-package org.myspring.beans.definition;
+package org.myspring.beans;
 
 public interface BeanDefinition {
     Class<?> getType();

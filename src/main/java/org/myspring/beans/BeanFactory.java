@@ -1,4 +1,4 @@
-package org.myspring.beans.factory;
+package org.myspring.beans;
 
 public interface BeanFactory {
     Object getBean(String name);

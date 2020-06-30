@@ -1,9 +1,9 @@
 package org.myspring.beans;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.myspring.beans.definition.ClassBeanDefinition;
-import org.myspring.beans.factory.DefaultBeanFactory;
+
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DefaultBeanFactoryTest {
 
@@ -16,7 +16,7 @@ public class DefaultBeanFactoryTest {
 
         TestClass testClass = beanFactory.getBean(TestClass.class);
 
-        Assert.assertEquals(testClass.getMessage(), "helloWorld");
+        assertThat(testClass.getMessage()).isEqualTo("helloWorld");
     }
 
     @Test
@@ -30,8 +30,8 @@ public class DefaultBeanFactoryTest {
         TestClass testClass = beanFactory.getBean(TestClass.class);
         TestClass2 testClass2 = beanFactory.getBean(TestClass2.class);
 
-        Assert.assertEquals(testClass.getMessage(), "helloWorld");
-        Assert.assertEquals(testClass2.getMessage(), "helloWorld");
+        assertThat(testClass.getMessage()).isEqualTo("helloWorld");
+        assertThat(testClass2.getMessage()).isEqualTo("helloWorld");
     }
 
 

@@ -1,8 +1,4 @@
-package org.myspring.beans.factory;
-
-import org.myspring.beans.BeanUtils;
-import org.myspring.beans.definition.BeanDefinition;
-import org.myspring.beans.definition.BeanDefinitionRegistry;
+package org.myspring.beans;
 
 import java.lang.reflect.Constructor;
 import java.util.*;

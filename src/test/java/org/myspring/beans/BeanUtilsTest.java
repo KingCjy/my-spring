@@ -1,27 +1,33 @@
-package org.myspring.beans.factory;
+package org.myspring.beans;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.myspring.beans.BeanInstantiationException;
 import org.myspring.beans.BeanUtils;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
 public class BeanUtilsTest {
 
     @Test
+    @DisplayName("인스턴스 생성 테스트")
     public void instantiateClassTest() throws Exception {
         String message = "Hello World";
         TestClass testClass = BeanUtils.instantiateClass(TestClass.class.getDeclaredConstructor(String.class), message);
-        Assert.assertEquals(testClass.getMessage(), message);
+        assertThat(testClass.getMessage()).isEqualTo(message);
     }
 
-    @Test(expected = BeanInstantiationException.class)
-    public void instantiateInterfaceTest() throws Exception {
-        BeanUtils.instantiateClass(List.class);
+    @Test
+    public void instantiateInterfaceTest() {
+        assertThatThrownBy(() -> {
+            BeanUtils.instantiateClass(List.class);
+        }).isInstanceOf(BeanInstantiationException.class);
     }
 
-    static class TestClass {
+    public static class TestClass {
 
         private final String message;
 
@@ -34,5 +40,3 @@ public class BeanUtilsTest {
         }
     }
 }
-
-
